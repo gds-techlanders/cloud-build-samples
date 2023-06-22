@@ -14,9 +14,12 @@
 
 # [START cloudbuild_quickstart_build]
 steps:
-  # Docker Build
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-west2-docker.pkg.dev/techlanders-feb23/gds/myimage', '.']
+  - id: run-terraform-apply
+    name: "gcr.io/cloud-builders/gcloud"
+    script: |
+      #!/bin/bash
+      set -e
+      echo "hello world"
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
