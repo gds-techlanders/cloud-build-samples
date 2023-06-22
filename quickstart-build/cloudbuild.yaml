@@ -18,4 +18,6 @@ steps:
   args: [ 'build', '-t', 'us-west2-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
 images:
 - 'us-west2-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
+options:
+  logging: CLOUD_LOGGING_ONLY
 # [END cloudbuild_quickstart_build]
